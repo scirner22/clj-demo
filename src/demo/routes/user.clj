@@ -11,9 +11,9 @@
   (v/validation-set
    (v/presence-of #{:name :email :password})
    (v/all-keys-in #{:name :email :password})
-   (v/validate-by :name string? :message "name must be a string")
-   (v/validate-by :email string? :message "email must be a string")
-   (v/validate-by :password string? :message "password must be a string")))
+   (v/validate-by :name string? :message "must be a string")
+   (v/validate-by :email string? :message "must be a string")
+   (v/validate-by :password string? :message "must be a string")))
 
 (defn create [{:keys [params] :as req}]
   (def params params)
