@@ -6,4 +6,7 @@
                  [compojure "1.6.0"]
                  [http-kit "2.2.0"]
                  [ring/ring-json "0.4.0"]
-                 [liberator "0.15.1"]])
+                 [liberator "0.15.1"]
+                 [org.clojure/tools.nrepl "0.2.12"]
+                 [org.clojure/tools.logging "0.4.0"]]
+  :main demo.server)

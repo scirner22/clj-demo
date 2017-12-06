@@ -1,11 +1,8 @@
-(ns lol-api.routes.user
+(ns demo.routes.user
   (:require [ring.util.response :refer [response]]))
 
-(defn signup [req]
+(defn create [req]
   (response {:page "signup"}))
 
-(defn login [req]
+(defn get [req]
   (response {:page "login"}))
-
-(defn logout [req]
-  (response {:page "logout"}))

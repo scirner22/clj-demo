@@ -1,0 +1,33 @@
+version: '3'
+services:
+  web:
+    image: clojure
+    ports:
+      - 8080:8080
+      - 5080:5080
+    depends_on:
+      - db
+    links:
+      - db:postgres.local
+    volumes:
+      - .:/app
+    working_dir: /app
+    entrypoint:
+      - lein
+      - run
+  db:
+    hostname: postgres.local
+    image: postgres:9.6.5
+    ports:
+      - 6432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+      PGPASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      PGDATA: /opt/pgdata
+    healthcheck:
+      test: ["CMD-SHELL", "psql -U postgres -t postgres -c \"\\d+ information_schema.tables\""]
+      interval: 15s
+      timeout: 10s
+      retries: 20
