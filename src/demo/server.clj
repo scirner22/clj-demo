@@ -13,7 +13,7 @@
 
 (defroutes app-routes
   (POST "/users" [] user/create)
-  (GET "/users" [] user/get))
+  (GET "/users/:id" [id] user/get))
 
 (def app
   (-> (handler/api #'app-routes)
