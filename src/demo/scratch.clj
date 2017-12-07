@@ -1,6 +1,24 @@
 (ns demo.scratch
   (:require [clojure.data :as data]))
 
+; Iterative Development Workflow!
+
+; Background
+;   - Old School: write, compile, run, test
+;   - TDD
+;   - repl based
+
+; Clojure
+;   - dynamic typed
+;   - s-expression based - (function arg1 arg2 arg3)
+
+; Model
+;                                         -------
+; <- vim-fireplace <- nrepl server 5080 --|     |
+;                                         | jvm |
+; <- ----------------- http server 8080 --|     |
+;                                         -------
+
 ; :Connect
 
 ; cqp
@@ -8,6 +26,8 @@
 ; cpp
 
 (def ping 10)
+
+(+ 2 (* 5 1))
 
 (defn increment [n]
   (inc n))
@@ -47,7 +67,9 @@
   (assoc coll age [name]))
 
 (defn transform [{:keys [users] :as data}]
-  (Thread/sleep 10000) ; simulate external system call that is slow!
+  ; simulate external system call that is slow!
+  (Thread/sleep (* 20 1000))
+
   (let [group-by-age (reduce add-user-by-age {} users)]
     (assoc data :group-by-age group-by-age)))
 
