@@ -1,7 +1,5 @@
 (ns demo.db.user
-  (:require [honeysql.core :as sql]
-            [honeysql.helpers :refer :all]
-            [clojure.java.jdbc :as jdbc]))
+  (:require [clojure.java.jdbc :as jdbc]))
 
 (def db-spec
   {:dbtype "postgresql"

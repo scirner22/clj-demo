@@ -1,4 +1,11 @@
-(ns demo.scratch)
+(ns demo.scratch
+  (:require [clojure.data :as data]))
+
+; :Connect
+
+; cqp
+
+; cpp
 
 (def ping 10)
 
@@ -6,6 +13,8 @@
   (inc n))
 
 (comment
+
+  (def ping2 10)
 
   (+ 1 2)
 
@@ -23,10 +32,10 @@
             :age 25}
            {:name "Eve"
             :age 10}
-           {:name "Faythe"
-            :age 10}
            {:name "Craig"
-            :age 2}]})
+            :age 2}
+           {:name "Faythe"
+            :age 10}]})
 
 (def output
   (merge input
@@ -38,6 +47,7 @@
   (assoc coll age [name]))
 
 (defn transform [{:keys [users] :as data}]
+  (Thread/sleep 10000) ; simulate external system call that is slow!
   (let [group-by-age (reduce add-user-by-age {} users)]
     (assoc data :group-by-age group-by-age)))
 

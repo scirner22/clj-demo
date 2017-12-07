@@ -16,11 +16,7 @@
    (v/validate-by :password string? :message "must be a string")))
 
 (defn create [{:keys [params] :as req}]
-  (def params params)
   (if (v/invalid? validation params)
     (bad-request (validation params))
     (let [{:keys [id] :as new-user} (user-db/add params)]
       (created (format "/users/%s" id) new-user))))
-
-(defn get [req]
-  (response {:page "login"}))

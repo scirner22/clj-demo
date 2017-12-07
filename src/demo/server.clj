@@ -12,8 +12,7 @@
 (defonce server (atom nil))
 
 (defroutes app-routes
-  (POST "/users" [] user/create)
-  (GET "/users/:id" [id] user/get))
+  (POST "/users" [] user/create))
 
 (def app
   (-> (handler/api #'app-routes)
@@ -37,8 +36,8 @@
 
 (comment
 
-  (-main)
   (reset! server (httpkit/run-server #'app {:port 8080}))
+
   (stop-server)
 
 )
