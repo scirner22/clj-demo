@@ -1,14 +1,11 @@
-# lol-api
+# clj-demo
 
 A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
 
-FIXME
+docker-compose up
 
-## License
-
-Copyright © 2017 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+vim - [vim-fireplace](https://github.com/tpope/vim-fireplace)
+emacs - [cider](https://github.com/clojure-emacs/cider)
+IntelliJ - [cursive](https://cursive-ide.com/)
