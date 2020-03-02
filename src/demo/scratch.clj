@@ -9,7 +9,7 @@
 ;   - repl based
 
 ; Clojure
-;   - dynamic typed
+;   - dynamically typed
 ;   - s-expression based - (function arg1 arg2 arg3)
 
 ; Model
@@ -24,6 +24,44 @@
 ; cqp
 
 ; cpp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 (def ping 10)
 

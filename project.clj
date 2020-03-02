@@ -1,4 +1,4 @@
-(defproject lol-api "0.1.0-SNAPSHOT"
+(defproject clj-demo "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.8.0"]

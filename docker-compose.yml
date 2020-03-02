@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: clojure
+    image: clojure:openjdk-8-lein
     ports:
       - 8080:8080
       - 5080:5080
