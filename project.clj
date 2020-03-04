@@ -2,6 +2,7 @@
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.8.0"]
+                 [clj-http "2.3.0"]
                  [javax.servlet/servlet-api "2.5"]
                  [compojure "1.6.0"]
                  [http-kit "2.2.0"]
