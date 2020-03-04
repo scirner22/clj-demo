@@ -106,7 +106,7 @@
 
 (defn transform [{:keys [users] :as data}]
   ; simulate external system call that is slow!
-  (Thread/sleep (* 10 1000))
+  (Thread/sleep (* 5 1000))
 
   (let [group-by-age (reduce add-user-by-age {} users)]
     (assoc data :group-by-age group-by-age)))
