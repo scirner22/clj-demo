@@ -1,23 +1,23 @@
 (ns demo.scratch
   (:require [clojure.data :as data]))
 
-; Iterative Development Workflow!
+; Repl driven development in clojure
 
-; Background
+; Workflows
 ;   - Old School: write, compile, run, test
 ;   - TDD
-;   - repl based
+;   - repl
 
 ; Clojure
 ;   - dynamically typed
 ;   - s-expression based - (function arg1 arg2 arg3)
 
 ; Model
-;                                         -------
-; <- vim-fireplace <- nrepl server 5080 --|     |
-;                                         | jvm |
-; <- ----------------- http server 8080 --|     |
-;                                         -------
+;                                             -------
+; vim <- vim-fireplace <- nrepl server 5080 --|     |
+;                                             | jvm |
+;                       <- http server 8080 --|     |
+;                                             -------
 
 ; :Connect
 
@@ -115,6 +115,7 @@
 
   (= (transform input) output)
 
+  (-> input transform :users)
   (-> input transform :group-by-age)
 
 )
